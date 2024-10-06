@@ -9,7 +9,7 @@ def _make_arg_parser():
 	parser.add_argument("-d", "--directory", type=Path, required=True,
 		help="The path to a directory")
 	parser.add_argument("-p", "--parents", type=int, required=False, default=0,
-		help="The number of parent directories to display with the file names")
+		help="The number of parent directories to display before the file names")
 	return parser
 
 
