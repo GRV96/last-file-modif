@@ -19,18 +19,16 @@ def _make_arg_parser():
 
 
 def _rel_path_with_nb_parents(some_path, nb_parents):
-	if nb_parents >= 1:
-		some_path = some_path.resolve()
-		some_path_parents = some_path.parents
+	if nb_parents <= 0:
+		return some_path.name
 
-		max_nb_parents = len(some_path_parents)
-		if nb_parents >= max_nb_parents:
-			nb_parents = max_nb_parents - 1
+	some_path = some_path.resolve()
+	some_path_parents = some_path.parents
 
+	if nb_parents < len(some_path_parents):
 		return some_path.relative_to(some_path_parents[nb_parents])
 
-	else:
-		return some_path.name
+	return some_path
 
 
 arg_parser = _make_arg_parser()
