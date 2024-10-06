@@ -8,6 +8,8 @@ def _make_arg_parser():
 	parser = ArgumentParser()
 	parser.add_argument("-d", "--directory", type=Path, required=True,
 		help="The path to a directory")
+	parser.add_argument("-p", "--parents", type=int, required=False, default=0,
+		help="The number of parent directories to display with the file names")
 	return parser
 
 
@@ -22,6 +24,7 @@ def _rel_path_with_nb_parents(some_path, nb_parents):
 arg_parser = _make_arg_parser()
 args = arg_parser.parse_args()
 directory = args.directory
+nb_parents = args.parents
 
 if not directory.is_dir():
 	print("-d/--direcotry: A direcotry is expected.")
@@ -32,5 +35,5 @@ for item in directory.glob("*"):
 	last_modif_moment = datetime.fromtimestamp(last_modif_timestamp)
 	last_modif_strf = last_modif_moment.isoformat()
 
-	item = _rel_path_with_nb_parents(item, 2)
+	item = _rel_path_with_nb_parents(item, nb_parents)
 	print(f"{item}....{last_modif_strf}")
