@@ -23,4 +23,4 @@ for item in directory.glob("*"):
 	last_modif_timestamp = item.stat().st_mtime
 	last_modif_moment = datetime.fromtimestamp(last_modif_timestamp)
 	last_modif_strf = last_modif_moment.isoformat()
-	print(f"{item.name} {last_modif_strf}")
+	print(f"{item.name}....{last_modif_strf}")
