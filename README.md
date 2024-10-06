@@ -13,7 +13,7 @@ fichier
 
 ### Exécution
 
-Lancez la commande depuis de dossier parent du dépôt. Exemple:
+Lancez la commande depuis de dossier **parent** du dépôt. Exemple:
 
 ```
 python last-file-modif -d last-file-modif
@@ -24,6 +24,11 @@ Exemple:
 
 ```
 python __main__.py -d .
+```
+
+Afficher l'aide:
+```
+python last-file-modif -h
 ```
 
 ## ENGLISH
@@ -39,7 +44,7 @@ names
 
 ### Execution
 
-Run the command from the repository's parent directory. Example:
+Run the command from the repository's **parent** directory. Example:
 
 ```
 python last-file-modif -d last-file-modif
@@ -50,4 +55,9 @@ Example:
 
 ```
 python __main__.py -d .
+```
+
+Display the help:
+```
+python last-file-modif -h
 ```

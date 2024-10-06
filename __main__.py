@@ -1,3 +1,8 @@
+"""
+This command line application displays the name and the moment of the last
+modification of each item in the specified directory.
+"""
+
 from datetime import datetime
 from pathlib import Path
 from argparse import ArgumentParser
@@ -5,7 +10,7 @@ from sys import exit
 
 
 def _make_arg_parser():
-	parser = ArgumentParser()
+	parser = ArgumentParser(description=__doc__)
 	parser.add_argument("-d", "--directory", type=Path, required=True,
 		help="The path to a directory")
 	parser.add_argument("-p", "--parents", type=int, required=False, default=0,
