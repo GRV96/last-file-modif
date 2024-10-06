@@ -4,6 +4,9 @@ from argparse import ArgumentParser
 from sys import exit
 
 
+_DATETIME_FORMAT = "%Y-%m-%dT%H:%M:%SZ"
+
+
 def _make_arg_parser():
 	parser = ArgumentParser()
 	parser.add_argument("-d", "--directory", type=Path, required=True,
@@ -22,4 +25,5 @@ if not directory.is_dir():
 for item in directory.glob("*"):
 	last_modif_timestamp = item.stat().st_mtime
 	last_modif_moment = datetime.fromtimestamp(last_modif_timestamp)
-	print(f"{item.name} {last_modif_moment}")
+	last_modif_strf = datetime.strftime(last_modif_moment, _DATETIME_FORMAT)
+	print(f"{item.name} {last_modif_strf}")
