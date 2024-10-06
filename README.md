@@ -5,9 +5,15 @@
 Cette application en ligne de commande affiche le nom et le moment de la
 dernière modification de chaque élément du dossier spécifié.
 
-## Exécution
+### Arguments
 
-Lancez la commande depuis de dossier parent du dépôt. Exemple:
+* `-d`/`--directory`: le chemin d'un dossier
+* `-p`/`--parents`: le nombre de dossiers parents à afficher avant les noms de
+fichier
+
+### Exécution
+
+Lancez la commande depuis de dossier **parent** du dépôt. Exemple:
 
 ```
 python last-file-modif -d last-file-modif
@@ -20,14 +26,25 @@ Exemple:
 python __main__.py -d .
 ```
 
+Afficher l'aide:
+```
+python last-file-modif -h
+```
+
 ## ENGLISH
 
 This command line application displays the name and the moment of the last
 modification of each item in the specified directory.
 
-## Execution
+### Arguments
 
-Run the command from the repository's parent directory. Example:
+* `-d`/`--directory`: the path to a directory
+* `-p`/`--parents`: the number of parent directories to display before the file
+names
+
+### Execution
+
+Run the command from the repository's **parent** directory. Example:
 
 ```
 python last-file-modif -d last-file-modif
@@ -38,4 +55,9 @@ Example:
 
 ```
 python __main__.py -d .
+```
+
+Display the help:
+```
+python last-file-modif -h
 ```
