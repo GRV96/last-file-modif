@@ -55,7 +55,7 @@ directory = args.directory
 nb_parents = args.parents
 
 if not directory.is_dir():
-	print("-d/--direcotry: A direcotry is expected.")
+	print("-d/--direcotry: A directory is expected.")
 	exit(1)
 
 outputs = list()
