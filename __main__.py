@@ -31,6 +31,7 @@ def _make_arg_parser():
 	parser = ArgumentParser(description=__doc__)
 	parser.add_argument("-d", "--directory", type=Path, required=True,
 		help="The path to a directory")
+	parser.add_argument("-f", "--files-only", action="store_true")
 	parser.add_argument("-p", "--parents", type=int, required=False, default=0,
 		help="The number of parent directories to display before the file names")
 	return parser
@@ -52,6 +53,7 @@ def _rel_path_with_nb_parents(some_path, nb_parents):
 arg_parser = _make_arg_parser()
 args = arg_parser.parse_args()
 directory = args.directory
+files_only = args.files_only
 nb_parents = args.parents
 
 if not directory.is_dir():
@@ -61,6 +63,9 @@ if not directory.is_dir():
 outputs = list()
 greatest_length = 0
 for item in directory.glob("*"):
+	if files_only and not item.is_file():
+		continue
+
 	last_modif_timestamp = item.stat().st_mtime
 	last_modif_moment = datetime.fromtimestamp(last_modif_timestamp)
 	last_modif_strf = last_modif_moment.isoformat()
