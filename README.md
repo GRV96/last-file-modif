@@ -7,9 +7,10 @@ dernière modification de chaque élément du dossier spécifié.
 
 ### Arguments
 
-* `-d`/`--directory`: le chemin d'un dossier
+* `-d`/`--directory`: le chemin d'un dossier.
+* `-f`/`--files-only`: ne considérer que les fichiers, pas les dossiers.
 * `-p`/`--parents`: le nombre de dossiers parents à afficher avant les noms de
-fichier
+fichier.
 
 ### Exécution
 
@@ -38,8 +39,9 @@ modification of each item in the specified directory.
 
 ### Arguments
 
-* `-d`/`--directory`: the path to a directory
-* `-p`/`--parents`: the number of parent directories to display before the file
+* `-d`/`--directory`: the path to a directory.
+* `-f`/`--files-only`: consider only the files, not the directories.
+* `-p`/`--parents`: the number of parent directories to display before the file.
 names
 
 ### Execution
