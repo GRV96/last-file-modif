@@ -30,10 +30,11 @@ class LastModifOutput:
 def _make_arg_parser():
 	parser = ArgumentParser(description=__doc__)
 	parser.add_argument("-d", "--directory", type=Path, required=True,
-		help="The path to a directory")
-	parser.add_argument("-f", "--files-only", action="store_true")
+		help="The path to a directory.")
+	parser.add_argument("-f", "--files-only", action="store_true",
+		help="Consider only the files, not the directories.")
 	parser.add_argument("-p", "--parents", type=int, required=False, default=0,
-		help="The number of parent directories to display before the file names")
+		help="The number of parent directories to display before the file names.")
 	return parser
 
 
